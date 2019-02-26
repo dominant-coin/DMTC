@@ -1,5 +1,5 @@
 ---
-name: "pivx-win-signer"
+name: "dmtc-win-signer"
 suites:
 - "bionic"
 architectures:

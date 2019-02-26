@@ -1,5 +1,5 @@
 ---
-name: "pivx-dmg-signer"
+name: "dmtc-dmg-signer"
 suites:
 - "bionic"
 architectures:

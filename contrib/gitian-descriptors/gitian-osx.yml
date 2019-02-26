@@ -1,5 +1,5 @@
 ---
-name: "pivx-osx-3.2"
+name: "dmtc-osx-1.0"
 enable_cache: true
 suites:
 - "bionic"
