@@ -332,7 +332,7 @@ public:
         nTargetTimespan = 24 * 60 * 60; // PIVX: 1 day
         nTargetSpacing = 1 * 60;        // PIVX: 1 minutes
         bnProofOfWorkLimit = ~uint256(0) >> 1;
-        nLastPOWBlock = 250;
+        nLastPOWBlock = 200;
         nMaturity = 100;
         nMasternodeCountDrift = 4;
         nModifierUpdateBlock = 0; //approx Mon, 17 Apr 2017 04:00:00 GMT
@@ -350,7 +350,7 @@ public:
         genesis.nNonce = 3;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0ff0de8046d883539019abfc3633e814f9266e14021d2cf5fa94457898a719b1"));
+        //assert(hashGenesisBlock == uint256("0ff0de8046d883539019abfc3633e814f9266e14021d2cf5fa94457898a719b1"));
         //assert(hashGenesisBlock == uint256("0x4f023a2120d9127b21bbad01724fdb79b519f593f2a85b60d3d79160ec5f29df"));
 
         vFixedSeeds.clear(); //! Testnet mode doesn't have any fixed seeds.
