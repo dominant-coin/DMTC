@@ -920,37 +920,83 @@ CAmount CBudgetManager::GetTotalBudget(int nHeight)
 
     //get block value and calculate from that
     CAmount nSubsidy = 0;
-    if (nHeight <= Params().LAST_POW_BLOCK() && nHeight >= 151200) {
-        nSubsidy = 50 * COIN;
-    } else if (nHeight <= 302399 && nHeight > Params().LAST_POW_BLOCK()) {
-        nSubsidy = 50 * COIN;
-    } else if (nHeight <= 345599 && nHeight >= 302400) {
-        nSubsidy = 45 * COIN;
-    } else if (nHeight <= 388799 && nHeight >= 345600) {
-        nSubsidy = 40 * COIN;
-    } else if (nHeight <= 431999 && nHeight >= 388800) {
-        nSubsidy = 35 * COIN;
-    } else if (nHeight <= 475199 && nHeight >= 432000) {
-        nSubsidy = 30 * COIN;
-    } else if (nHeight <= 518399 && nHeight >= 475200) {
-        nSubsidy = 25 * COIN;
-    } else if (nHeight <= 561599 && nHeight >= 518400) {
-        nSubsidy = 20 * COIN;
-    } else if (nHeight <= 604799 && nHeight >= 561600) {
-        nSubsidy = 15 * COIN;
-    } else if (nHeight <= 647999 && nHeight >= 604800) {
-        nSubsidy = 10 * COIN;
-    } else if (nHeight >= Params().Zerocoin_Block_V2_Start()) {
-        nSubsidy = 10 * COIN;
-    } else {
+    if (nHeight == 0) {
+        nSubsidy = 50000 * COIN;
+    } else if (nHeight < 200 && nHeight > 1) {
         nSubsidy = 5 * COIN;
-    }
+    } else if (nHeight <= 103880 && nHeight >= 200) {
+        nSubsidy = 20 * COIN;
+    } else if (nHeight <= 207560 && nHeight >= 103881) {
+        nSubsidy = 18 * COIN;
+    } else if (nHeight <= 311240 && nHeight >= 207561) {
+        nSubsidy = 16.2 * COIN;
+    } else if (nHeight <= 414920 && nHeight >= 311241) {
+        nSubsidy = 14.58 * COIN;
+    } else if (nHeight <= 518600 && nHeight >= 414921) {
+        nSubsidy = 13.122 * COIN;
+    } else if (nHeight <= 622280 && nHeight >= 518601) {
+        nSubsidy = 11.81 * COIN;
+    } else if (nHeight <= 725960 && nHeight >= 622281) {
+        nSubsidy = 10.62 * COIN;
+    } else if (nHeight <= 829640 && nHeight >= 725961) {
+        nSubsidy = 9.56 * COIN;
+    } else if (nHeight <= 933320 && nHeight >= 829641) {
+        nSubsidy = 8.6 * COIN;
+    } else if (nHeight <= 1037000 && nHeight >= 933321) {
+        nSubsidy = 7.74 * COIN;
+    } else if (nHeight <= 1140680 && nHeight >= 1037001) {
+        nSubsidy = 6.97 * COIN;
+    } else if (nHeight <= 1244360 && nHeight >= 1140681) {
+        nSubsidy = 6.27 * COIN;
+    } else if (nHeight <= 1348040 && nHeight >= 1244361) {
+        nSubsidy = 5.64 * COIN;
+    } else if (nHeight < 1451720 && nHeight > 1348041) {
+        nSubsidy = 5.08 * COIN;
+    } else if (nHeight <= 1555400 && nHeight >= 1451721) {
+        nSubsidy = 4.57 * COIN;
+    } else if (nHeight <= 1659080 && nHeight >= 1555401) {
+        nSubsidy = 4.11 * COIN;
+    } else if (nHeight <= 1762760 && nHeight >= 1659081) {
+        nSubsidy = 3.7 * COIN;
+    } else if (nHeight <= 1866440 && nHeight >= 1762761) {
+        nSubsidy = 3.33 * COIN;
+    } else if (nHeight <= 1970120 && nHeight >= 1866441) {
+        nSubsidy = 3 * COIN;
+    } else if (nHeight <= 2073800 && nHeight >= 1970121) {
+        nSubsidy = 2.7 * COIN;
+    } else if (nHeight <= 2177480 && nHeight >= 2073801) {
+        nSubsidy = 2.43 * COIN;
+    } else if (nHeight <= 2281160 && nHeight >= 2177481) {
+        nSubsidy = 2.18 * COIN;
+    } else if (nHeight <= 2384840 && nHeight >= 2281161) {
+        nSubsidy = 1.96 * COIN;
+    } else if (nHeight <= 2488520 && nHeight >= 2384841) {
+        nSubsidy = 1.77 * COIN;
+    } else if (nHeight <= 2592200 && nHeight >= 2488521) {
+        nSubsidy = 1.59 * COIN;
+    } else if (nHeight <= 2695880 && nHeight >= 2592201) {
+        nSubsidy = 1.43 * COIN;
+    } else if (nHeight <= 2799560 && nHeight >= 2695881) {
+        nSubsidy = 1.29 * COIN;
+    }  else if (nHeight <= 2903240 && nHeight >= 2799561) {
+        nSubsidy = 1.16 * COIN;
+    } else if (nHeight <= 3006920 && nHeight >= 2903241) {
+        nSubsidy = 1.04 * COIN;
+    } else if (nHeight <= 3110600 && nHeight >= 3006921) {
+        nSubsidy = 0.94 * COIN;
+    } else if (nHeight <= 3214280 && nHeight >= 3110601) {
+        nSubsidy = 0.84 * COIN;
+    } else if (nHeight <= 3317960 && nHeight >= 3214281) {
+        nSubsidy = 0.76 * COIN;
+    } else nSubsidy = 0.01 * COIN;
+    
 
     // Amount of blocks in a months period of time (using 1 minutes per) = (60*24*30)
     if (nHeight <= 172800) {
         return 648000 * COIN;
     } else {
-        return ((nSubsidy / 100) * 10) * 1440 * 30;
+        //return ((nSubsidy / 100) * 10) * 1440 * 30;
+        return 0;
     }
 }
 
