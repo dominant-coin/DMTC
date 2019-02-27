@@ -53,7 +53,7 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (0, uint256("0x00000562e3bf45d50dceb189afebe467f37622b65b4fb25caf63f2492dda0b18"));
+    (0, uint256("0x00000e4c013e3fe976f9edb29409fade88baa7e1fee63b6e2b27c853cc57b5ad"));
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
     1551150000, // * UNIX timestamp of last checkpoint block
@@ -157,7 +157,7 @@ public:
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CScriptNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
-        txNew.vout[0].nValue = 250 * COIN;
+        txNew.vout[0].nValue = 50 * COIN;
         txNew.vout[0].scriptPubKey = CScript() << ParseHex("047bb8b478b2397134588a06868384be1c6ea5c984daf500532f5cecba1f2a247c9e4d805cee49d13a019096dbebb422d81a4238efc58904be5d5bab811fe50ada") << OP_CHECKSIG;
         genesis.vtx.push_back(txNew);
         genesis.hashPrevBlock = 0;
@@ -165,12 +165,13 @@ public:
         genesis.nVersion = 1;
         genesis.nTime = 1551150000;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 1136838;
+        genesis.nNonce = 2997230;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x00000562e3bf45d50dceb189afebe467f37622b65b4fb25caf63f2492dda0b18"));
-        assert(genesis.hashMerkleRoot == uint256("0x4e4fe0c605abd75108988f66dd31235229ff2f0d0bde05aae0ec74cb532b1cee"));
+        assert(hashGenesisBlock == uint256("0x00000e4c013e3fe976f9edb29409fade88baa7e1fee63b6e2b27c853cc57b5ad"));
+        assert(genesis.hashMerkleRoot == uint256("0x5080da5fc9b3f2e4965c93cc918067ed8350712db6f4a76f815bfed263a5768e"));
 
+        vSeeds.push_back(CDNSSeedData("188.166.101.109", "188.166.101.109"));
         vSeeds.push_back(CDNSSeedData("68.183.52.141", "68.183.52.141"));         // Single node address
         vSeeds.push_back(CDNSSeedData("68.183.58.224", "68.183.58.224"));         // Single node address
         vSeeds.push_back(CDNSSeedData("104.248.10.169 ", "104.248.10.169 "));     // Single node address
@@ -181,7 +182,7 @@ public:
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x02)(0x2D)(0x25)(0x33).convert_to_container<std::vector<unsigned char> >();
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x02)(0x21)(0x31)(0x2B).convert_to_container<std::vector<unsigned char> >();
         // 	BIP44 coin type is from https://github.com/satoshilabs/slips/blob/master/slip-0044.md
-        base58Prefixes[EXT_COIN_TYPE] = boost::assign::list_of(0x80)(0x00)(0x01)(0x11).convert_to_container<std::vector<unsigned char> >();
+        base58Prefixes[EXT_COIN_TYPE] = boost::assign::list_of(0x80)(0x00)(0x00)(0x77).convert_to_container<std::vector<unsigned char> >();
 
         convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
 
