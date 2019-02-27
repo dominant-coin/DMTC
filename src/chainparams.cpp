@@ -108,10 +108,10 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 4-byte int at any alignment.
          */
-        pchMessageStart[0] = 0x1c;
-        pchMessageStart[1] = 0x0c;
-        pchMessageStart[2] = 0xcb;
-        pchMessageStart[3] = 0x4f;
+        pchMessageStart[0] = 0xdf;
+        pchMessageStart[1] = 0xa0;
+        pchMessageStart[2] = 0x8d;
+        pchMessageStart[3] = 0x8f;
         vAlertPubKey = ParseHex("043be5ad30a94ea1e487bf8a2d6ad3dc1873025b9a6a22b8991a11a11d7e8e054da3567fbdc015cac64121fec7f50593f3559f37c9284d71a8fee291099749be85");
         nDefaultPort = 51472;
         bnProofOfWorkLimit = ~uint256(0) >> 20; // PIVX starting difficulty is 1 / 2^12
@@ -131,7 +131,7 @@ public:
         nLastPOWBlock = 200;
         nModifierUpdateBlock = 99999999;
         nZerocoinStartHeight = 99999999;
-        nZerocoinStartTime = 9999999999; // October 17, 2017 4:30:00 AM
+        nZerocoinStartTime = 1898415887; 
         nBlockEnforceSerialRange = 99999999; //Enforce serial range starting this block
         nBlockRecalculateAccumulators = 99999999; //Trigger a recalculation of accumulators
         nBlockFirstFraudulent = 99999999; //First block that bad serials emerged
@@ -186,7 +186,7 @@ public:
 
         convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
 
-        fMiningRequiresPeers = true;
+        fMiningRequiresPeers = false;
         fAllowMinDifficultyBlocks = false;
         fDefaultConsistencyChecks = false;
         fRequireStandard = true;
@@ -258,8 +258,8 @@ public:
         nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
         nBlockRecalculateAccumulators = 9908000; //Trigger a recalculation of accumulators
         nBlockFirstFraudulent = 9891737; //First block that bad serials emerged
-        nBlockLastGoodCheckpoint = 9891730; //Last valid accumulator checkpoint
-        nBlockEnforceInvalidUTXO = 9902850; //Start enforcing the invalid UTXO's
+        nBlockLastGoodCheckpoint = 99999999; //Last valid accumulator checkpoint
+        nBlockEnforceInvalidUTXO = 99999999; //Start enforcing the invalid UTXO's
         nInvalidAmountFiltered = 0; //Amount of invalid coins filtered through exchanges, that should be considered valid
         nBlockZerocoinV2 = 444020; //!> The block that zerocoin v2 becomes active
         nEnforceNewSporkKey = 1521604800; //!> Sporks signed after Wednesday, March 21, 2018 4:00:00 AM GMT must use the new spork key
@@ -362,7 +362,7 @@ public:
         fDefaultConsistencyChecks = true;
         fRequireStandard = false;
         fMineBlocksOnDemand = true;
-        fSkipProofOfWorkCheck = true;
+        fSkipProofOfWorkCheck = false;
         fTestnetToBeDeprecatedFieldRPC = false;
     }
     const Checkpoints::CCheckpointData& Checkpoints() const
