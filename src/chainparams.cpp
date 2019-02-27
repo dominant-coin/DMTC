@@ -53,7 +53,7 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (0, uint256("00000562e3bf45d50dceb189afebe467f37622b65b4fb25caf63f2492dda0b18"));
+    (0, uint256("0x00000562e3bf45d50dceb189afebe467f37622b65b4fb25caf63f2492dda0b18"));
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
     1551150000, // * UNIX timestamp of last checkpoint block
@@ -63,15 +63,15 @@ static const Checkpoints::CCheckpointData data = {
 };
 
 static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
-    boost::assign::map_list_of(0, uint256("0x001"));
+    boost::assign::map_list_of(0, uint256("0x00000fe1871ba51f3c268d74d52379a20087f115fe0b3723b553bdca1c60be53"));
 static const Checkpoints::CCheckpointData dataTestnet = {
     &mapCheckpointsTestnet,
-    1740710,
+    1551150001,
     0,
     250};
 
 static Checkpoints::MapCheckpoints mapCheckpointsRegtest =
-    boost::assign::map_list_of(0, uint256("0x001"));
+    boost::assign::map_list_of(0, uint256("0x0ff0de8046d883539019abfc3633e814f9266e14021d2cf5fa94457898a719b1"));
 static const Checkpoints::CCheckpointData dataRegtest = {
     &mapCheckpointsRegtest,
     1551150002,
@@ -195,8 +195,8 @@ public:
         fHeadersFirstSyncingActive = false;
 
         nPoolMaxTransactions = 3;
-        strSporkKey = "0499A7AF4806FC6DE640D23BC5936C29B77ADF2174B4F45492727F897AE63CF8D27B2F05040606E0D14B547916379FA10716E344E745F880EDC037307186AA25B7";
-        strSporkKeyOld = "04B433E6598390C992F4F022F20D3B4CBBE691652EE7C48243B81701CBDB7CC7D7BF0EE09E154E6FCBF2043D65AF4E9E97B89B5DBAF830D83B9B7F469A6C45A717";
+        strSporkKey = "0488a590875cd8afcc973d1db1bd87f2e467c1ac668d6b27ee367291e8818cbad6cfdcf87d5e3968147edaecf597028bface42874ed9ade4992d3e68aa490470ce";
+        strSporkKeyOld = "0488a590875cd8afcc973d1db1bd87f2e467c1ac668d6b27ee367291e8818cbad6cfdcf87d5e3968147edaecf597028bface42874ed9ade4992d3e68aa490470ce";
         strObfuscationPoolDummyAddress = "D87q2gC9j6nNrnzCsg4aY6bHMLsT9nUhEw";
         nStartMasternodePayments = 1533945600; //Wed, 25 Jun 2014 20:36:16 GMT
 
