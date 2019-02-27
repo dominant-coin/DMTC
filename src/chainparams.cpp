@@ -171,6 +171,7 @@ public:
         assert(hashGenesisBlock == uint256("0x00000e4c013e3fe976f9edb29409fade88baa7e1fee63b6e2b27c853cc57b5ad"));
         assert(genesis.hashMerkleRoot == uint256("0x5080da5fc9b3f2e4965c93cc918067ed8350712db6f4a76f815bfed263a5768e"));
 
+
         vSeeds.push_back(CDNSSeedData("188.166.101.109", "188.166.101.109"));
         vSeeds.push_back(CDNSSeedData("68.183.52.141", "68.183.52.141"));         // Single node address
         vSeeds.push_back(CDNSSeedData("68.183.58.224", "68.183.58.224"));         // Single node address
