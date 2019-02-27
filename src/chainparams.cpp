@@ -121,9 +121,9 @@ public:
         nRejectBlockOutdatedMajority = 950; 
         nToCheckBlockUpgradeMajority = 1000;
         nMinerThreads = 0;
-        nTargetTimespan = 24 * 60 * 60; // DMTC: 1 day
+        nTargetTimespan = 2.5 * 60; // DMTC: 1 day
         nTargetSpacing = 2.5 * 60;  // DMTC: 2.5 minutes
-        nMaturity = 100;
+        nMaturity = 20;
         nMasternodeCountDrift = 20;
         nMaxMoneyOut = 20000000 * COIN;
 
@@ -197,8 +197,8 @@ public:
         nPoolMaxTransactions = 3;
         strSporkKey = "0499A7AF4806FC6DE640D23BC5936C29B77ADF2174B4F45492727F897AE63CF8D27B2F05040606E0D14B547916379FA10716E344E745F880EDC037307186AA25B7";
         strSporkKeyOld = "04B433E6598390C992F4F022F20D3B4CBBE691652EE7C48243B81701CBDB7CC7D7BF0EE09E154E6FCBF2043D65AF4E9E97B89B5DBAF830D83B9B7F469A6C45A717";
-        strObfuscationPoolDummyAddress = "";
-        nStartMasternodePayments = 1551150000; //Wed, 25 Jun 2014 20:36:16 GMT
+        strObfuscationPoolDummyAddress = "D87q2gC9j6nNrnzCsg4aY6bHMLsT9nUhEw";
+        nStartMasternodePayments = 1533945600; //Wed, 25 Jun 2014 20:36:16 GMT
 
         /** Zerocoin */
         zerocoinModulus = "25195908475657893494027183240048398571429282126204032027777137836043662020707595556264018525880784"
@@ -215,7 +215,7 @@ public:
         nZerocoinHeaderVersion = 4; //Block headers must be this version once zerocoin is active
         nZerocoinRequiredStakeDepth = 200; //The required confirmations for a zpiv to be stakable
 
-        nBudget_Fee_Confirmations = 2; // Number of confirmations for the finalization fee
+        nBudget_Fee_Confirmations = 6; // Number of confirmations for the finalization fee
     }
 
     const Checkpoints::CCheckpointData& Checkpoints() const
